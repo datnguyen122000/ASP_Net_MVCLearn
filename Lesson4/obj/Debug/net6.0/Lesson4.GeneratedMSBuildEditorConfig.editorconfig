@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Lesson4
+build_property.RootNamespace = Lesson4
+build_property.ProjectDir = C:\Users\nguyenquocdat\Desktop\AspMvcLearn\Lesson1\Lesson4\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\nguyenquocdat\Desktop\AspMvcLearn\Lesson1\Lesson4
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Customer/AddNewCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWRkTmV3Q3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Customer/EditCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdEN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Customer/ListCustomers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcTGlzdEN1c3RvbWVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Home/AddNewStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGROZXdTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Home/AddNewStudent2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGROZXdTdHVkZW50Mi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Home/AddNewStudent22.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGROZXdTdHVkZW50MjIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Home/GioiThieu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHaW9pVGhpZXUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Home/OldestStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbGRlc3RTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Home/OrderByAge.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlckJ5QWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Home/TrangChu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmFuZ0NodS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Order/AddDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQWRkRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Order/AddOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQWRkT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Order/DetailOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlsT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Order/EditDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRWRpdERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Order/EditOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRWRpdE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Order/ListOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcTGlzdE9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/Shared/LayoutUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyenquocdat/Desktop/AspMvcLearn/Lesson1/Lesson4/Views/TinTuc/DanhSachTinTuc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGluVHVjXERhbmhTYWNoVGluVHVjLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

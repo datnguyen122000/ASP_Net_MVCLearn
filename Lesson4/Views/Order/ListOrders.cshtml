@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Lesson4.Models.Order>
+
+@{
+    ViewData["Title"] = "Danh sách đơn hàng";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<h1>ListOrders</h1>
+
+<p>
+    <a asp-action="Create" href="~/Order/AddOrder">Thêm mới</a>
+</p>
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <input class="form-control" name="OrderDate" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local" />
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                    <a href="~/Order/EditOrder?id=@item.Id">Sửa</a> |
+                    <a href="~/Order/DetailOrder?id=@item.Id">Chi tiết</a> |
+                    <a href="~/Order/DeleteOrder?id=@item.Id">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

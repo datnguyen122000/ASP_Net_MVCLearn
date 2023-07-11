@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ASPLearnModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ASPLearnEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Computers" EntityType="ASPLearnModel.Computer" />
+    <EntitySet Name="Customers" EntityType="ASPLearnModel.Customer" />
+    <EntitySet Name="CustomerTypes" EntityType="ASPLearnModel.CustomerType" />
+    <AssociationSet Name="FK_Customer_CustomerType" Association="ASPLearnModel.FK_Customer_CustomerType">
+      <End Role="CustomerType" EntitySet="CustomerTypes" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <EntitySet Name="Posts" EntityType="ASPLearnModel.Post" />
+    <EntitySet Name="PostTypes" EntityType="ASPLearnModel.PostType" />
+    <AssociationSet Name="FK_Post_PostType" Association="ASPLearnModel.FK_Post_PostType">
+      <End Role="PostType" EntitySet="PostTypes" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <FunctionImport Name="listCustomer" ReturnType="Collection(ASPLearnModel.listCustomer_Result)">
+      <Parameter Name="filter" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Employees" EntityType="ASPLearnModel.Employee" />
+    <EntitySet Name="Employee_Role" EntityType="ASPLearnModel.Employee_Role" />
+    <EntitySet Name="Roles" EntityType="ASPLearnModel.Role" />
+    <AssociationSet Name="FK_Employee_Role_Employee" Association="ASPLearnModel.FK_Employee_Role_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Employee_Role" EntitySet="Employee_Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Role_Role" Association="ASPLearnModel.FK_Employee_Role_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Employee_Role" EntitySet="Employee_Role" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Computer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YearOfManufacture" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IdCustomerType" Type="Int32" />
+    <NavigationProperty Name="CustomerType" Relationship="ASPLearnModel.FK_Customer_CustomerType" FromRole="Customer" ToRole="CustomerType" />
+  </EntityType>
+  <EntityType Name="CustomerType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customers" Relationship="ASPLearnModel.FK_Customer_CustomerType" FromRole="CustomerType" ToRole="Customer" />
+  </EntityType>
+  <Association Name="FK_Customer_CustomerType">
+    <End Type="ASPLearnModel.CustomerType" Role="CustomerType" Multiplicity="0..1" />
+    <End Type="ASPLearnModel.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="IdCustomerType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="PostName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PostDate" Type="DateTime" Precision="0" />
+    <Property Name="PostWriter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Display" Type="Boolean" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="IdType" Type="Int32" />
+    <NavigationProperty Name="PostType" Relationship="ASPLearnModel.FK_Post_PostType" FromRole="Post" ToRole="PostType" />
+  </EntityType>
+  <EntityType Name="PostType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="ASPLearnModel.FK_Post_PostType" FromRole="PostType" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK_Post_PostType">
+    <End Type="ASPLearnModel.PostType" Role="PostType" Multiplicity="0..1" />
+    <End Type="ASPLearnModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="IdType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="listCustomer_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdCustomerType" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBird" Type="DateTime" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdEmployeeType" Type="Int32" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee_Role" Relationship="ASPLearnModel.FK_Employee_Role_Employee" FromRole="Employee" ToRole="Employee_Role" />
+  </EntityType>
+  <EntityType Name="Employee_Role">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee" Relationship="ASPLearnModel.FK_Employee_Role_Employee" FromRole="Employee_Role" ToRole="Employee" />
+    <NavigationProperty Name="Role" Relationship="ASPLearnModel.FK_Employee_Role_Role" FromRole="Employee_Role" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RoleCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee_Role" Relationship="ASPLearnModel.FK_Employee_Role_Role" FromRole="Role" ToRole="Employee_Role" />
+  </EntityType>
+  <Association Name="FK_Employee_Role_Employee">
+    <End Type="ASPLearnModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="ASPLearnModel.Employee_Role" Role="Employee_Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee_Role">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Role_Role">
+    <End Type="ASPLearnModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="ASPLearnModel.Employee_Role" Role="Employee_Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee_Role">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

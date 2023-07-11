@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ADOLearn.Models.PostType>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <p>
+        <a href="~/PostType/Add">Thêm</a>
+    </p>
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a href="~/PostType/Update?Id=@item.Id">Cập nhật</a> |
+                <a href="~/PostType/Delete?Id=@item.Id">Xóa</a>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

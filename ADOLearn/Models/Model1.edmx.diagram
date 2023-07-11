@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8bf04b487bad407a94566c67ad6007f1" Name="Diagram1">
+        <EntityTypeShape EntityType="ASPLearnModel.Computer" Width="1.5" PointX="5.625" PointY="3.75" />
+        <EntityTypeShape EntityType="ASPLearnModel.Customer" Width="1.5" PointX="8" PointY="0.5" />
+        <EntityTypeShape EntityType="ASPLearnModel.CustomerType" Width="1.5" PointX="5.75" PointY="0.875" />
+        <AssociationConnector Association="ASPLearnModel.FK_Customer_CustomerType" />
+        <EntityTypeShape EntityType="ASPLearnModel.Post" Width="1.5" PointX="13.125" PointY="1" />
+        <EntityTypeShape EntityType="ASPLearnModel.PostType" Width="1.5" PointX="10.25" PointY="1.5" />
+        <AssociationConnector Association="ASPLearnModel.FK_Post_PostType" />
+        <EntityTypeShape EntityType="ASPLearnModel.Employee" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="ASPLearnModel.Employee_Role" Width="1.5" PointX="3" PointY="7.5" />
+        <EntityTypeShape EntityType="ASPLearnModel.Role" Width="1.5" PointX="0.75" PointY="3.5" />
+        <AssociationConnector Association="ASPLearnModel.FK_Employee_Role_Employee" />
+        <AssociationConnector Association="ASPLearnModel.FK_Employee_Role_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

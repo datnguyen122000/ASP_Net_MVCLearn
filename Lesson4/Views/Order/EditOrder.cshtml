@@ -1,0 +1,49 @@
+﻿@model Lesson4.Models.Order
+
+@{
+    ViewData["Title"] = "EditOrder";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<h1>Sửa đơn hàng</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditOrder" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly value="@Model.Id"/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" name="CustomerName" value="@Model.CustomerName" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" name="Phone" value="@Model.Phone"/>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" name="Address" value="@Model.Address"/>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label"></label>
+                <input class="form-control" name="OrderDate" value="@Html.Raw(Model.OrderDate.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local"/>
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

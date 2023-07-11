@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<style>
+    .active {
+        color: red;
+    }
+
+    .menu li {
+        display: inline-block;
+        padding: 10px;
+    }
+</style>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="~/home/TrangChu" class="@ViewBag.trangchu">Trang chủ</a></li>
+            <li><a href="~/Customer/ListCustomers" class="@ViewBag.gioithieu">Khách hàng</a></li>
+            <li><a href="~/Order/ListOrders" class="@ViewBag.donhang">Đơn hàng</a></li>
+            <li><a href="~/TinTuc/DanhSachTinTuc" class="@ViewBag.tintuc">Tin tức</a></li>
+        </ul>
+    </div>
+
+    <div>
+        @RenderBody()
+
+
+    </div>
+    <div class="footer">
+        @*false là có cx được không có cx được còn true là bắt buộc phải có*@
+        @RenderSection("footer",false);
+    </div>
+</body>
+</html>

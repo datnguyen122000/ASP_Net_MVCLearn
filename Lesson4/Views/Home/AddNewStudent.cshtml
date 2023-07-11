@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "AddNewStudent";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<h1>Thêm mới sinh viên</h1>
+<div>
+    <a href="~/Home/TrangChu">Trở về</a><br />
+    <form action="SaveNewStudent" method="post">
+        <input type="text" name="name" placeholder="Tên học sinh" /><br />
+        <input type="number" name="age" placeholder="Tuổi"/><br />
+        <input type="number" name="classId" placeholder="Mã lớp"/><br />
+        <button type="submit">Lưu</button>
+    </form>
+   
+</div>
+@section footer{
+    <h1>Đây là footer của trang chủ</h1>
+}

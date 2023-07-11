@@ -1,0 +1,51 @@
+﻿@model Lesson4.Models.Computer
+
+@{
+    ViewData["Title"] = "AddDetail";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<h1>AddDetail</h1>
+
+<h4>Computer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddDetail" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" name="Id" value="@ViewBag.Id" type="text" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Serie" class="control-label"></label>
+                <input asp-for="Serie" placeholder="Nhập dòng máy" name="Serie" class="form-control" />
+                <span asp-validation-for="Serie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" placeholder="Nhập giá" name="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDate" class="control-label"></label>
+                <input asp-for="ProductDate" placeholder="Chọn ngày sản xuất" name="ProductDate" class="form-control" />
+                <span asp-validation-for="ProductDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manufacturer" class="control-label"></label>
+                <input asp-for="Manufacturer" placeholder="Nhập hãng sản xuất" name="Manufacturer" class="form-control" />
+                <span asp-validation-for="Manufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

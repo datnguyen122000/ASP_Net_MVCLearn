@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ADO.NET.Models.Customer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <p>
+        <a href="~/Customer/Add">Tạo mới khách hàng</a>
+    </p>
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.IdCustomerType)*@
+                abc
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCustomerType)
+            </td>
+            <td>
+                <a href="~/Customer/Edit?id=@item.Id">Sửa</a> |
+                <a href="~/Customer/Delete?id=@item.Id">Xóa</a>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

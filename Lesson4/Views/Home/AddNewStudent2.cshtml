@@ -1,0 +1,39 @@
+﻿@model Lesson4.Models.Student
+
+@{
+    ViewData["Title"] = "AddNewStudent2";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<h1>Thêm mới sinh viên 2</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddNewStudent2" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" name="Name" class="form-control" placeholder="Nhập tên"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" name="Age" class="form-control" placeholder="Nhập tuổi" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassId" class="control-label"></label>
+                <input asp-for="ClassId" name="ClassId" class="form-control" placeholder="Nhập lớp"/>
+                <span asp-validation-for="ClassId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <a href="~/Home/TrangChu">Trở về</a><br />
+</div>
+@section footer{
+    <h1>Đây là footer của thêm mới</h1>
+}
+

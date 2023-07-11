@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ASPLearnModelStoreContainer" CdmEntityContainer="ASPLearnEntities2">
+    <EntitySetMapping Name="Computers">
+      <EntityTypeMapping TypeName="ASPLearnModel.Computer">
+        <MappingFragment StoreEntitySet="Computer">
+          <ScalarProperty Name="YearOfManufacture" ColumnName="YearOfManufacture" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ASPLearnModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="IdCustomerType" ColumnName="IdCustomerType" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerTypes">
+      <EntityTypeMapping TypeName="ASPLearnModel.CustomerType">
+        <MappingFragment StoreEntitySet="CustomerType">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="ASPLearnModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="IdType" ColumnName="IdType" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="PostWriter" ColumnName="PostWriter" />
+          <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PostName" ColumnName="PostName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostTypes">
+      <EntityTypeMapping TypeName="ASPLearnModel.PostType">
+        <MappingFragment StoreEntitySet="PostType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="listCustomer" FunctionName="ASPLearnModel.Store.listCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ASPLearnModel.listCustomer_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IdCustomerType" ColumnName="IdCustomerType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="ASPLearnModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="IdEmployeeType" ColumnName="IdEmployeeType" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOfBird" ColumnName="DateOfBird" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Role">
+      <EntityTypeMapping TypeName="ASPLearnModel.Employee_Role">
+        <MappingFragment StoreEntitySet="Employee_Role">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ASPLearnModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ADOLearn.Models.Post>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <p>
+       <a href="~/Post/Add">Thêm mới</a>
+    </p>
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PostName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostWriter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Display)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostType.Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @string.Format("{0:dd-MM-yyyy}",item.PostDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostWriter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                <input type="checkbox" value="true" name="Display" @Html.Raw(item.Display == true ? "checked" : "") />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostType.Name)
+            </td>
+            <td>
+                <a href="~/Post/Edit?id=@item.Id">Sửa</a> |
+                <a href="~/Post/Delete?id=@item.Id">Xóa</a>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

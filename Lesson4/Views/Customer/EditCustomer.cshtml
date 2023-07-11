@@ -1,0 +1,56 @@
+﻿@model Lesson4.Models.Customer
+
+@{
+    ViewData["Title"] = "EditCustomer";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<h1>EditCustomer</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditCustomer" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" name="Id" class="form-control" value="@Model.Id" readonly/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" name="Name" class="form-control" value="@Model.Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" name="Address" class="form-control" value="@Model.Address" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" name="Email" class="form-control" value="@Model.Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sex" class="control-label"></label>
+                <input asp-for="Sex" name="Sex" class="form-control" value="@Model.Sex" />
+                <span asp-validation-for="Sex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

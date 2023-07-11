@@ -1,0 +1,40 @@
+﻿@using Lesson4.Models;
+@model List<Student> //model ở đây viết thường còn model ở dưới viết hoa
+
+@{
+    Layout = "~/views/shared/layoutuser.cshtml";
+    ViewBag.trangchu = "active";
+    ViewBag.danhsachsinhvien = new List<string> { "Nguyễn Quốc Đạt", "Nguyễn Quốc Vượng" };
+}
+
+<h1>@ViewBag.title</h1>
+<div>
+    <a href="~/Home/TrangChu">Trở lại</a>
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Lớp</th>
+        </tr>
+        @{
+            int stt = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@stt</td>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Age</td>
+                    <td>@item.ClassId</td>
+                </tr>
+                stt++;
+            }
+        }
+
+    </table>
+</div>
+@section footer{
+    <h1>Đây là footer của trang chủ</h1>
+}

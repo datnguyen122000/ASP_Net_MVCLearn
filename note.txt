@@ -1,0 +1,21 @@
+Link: controller/action?tham số
+ctr D: là duplicate
+video 9
+
+Static là cái luôn tồn tại trong quá trình chúng ta chạy nên ví dụ có một list thì thêm sửa xóa sẽ như thêm sửa xóa trong db
+
+ADO.NET là cái framework giúp kết nối với asp vs lại db
+
+edit tự động generate view không thấy thẻ form cx không sao vẫn chạy được
+db.SaveChanges(); tất cả các lệnh liên quan đến thêm, sửa, xóa đều phải có db.SaveChanges();
+
+toán tử 3 ngôi trong C#    
+<option value="@type.Id" @Html.Raw(type.Id==Model.IdCustomerType ? "selected":"")>@type.TypeName</option>
+
+lấy session ở trên file razor: var user = HttpContext.Current.Session["user"].ToString();
+
+TempData VS ViewBag: TempData có thể được sử dụng ở mọi view trong một request hoặc giữa các request liên tiếp. Dữ liệu được lưu trữ trong TempData có thể được truy cập từ bất kỳ view nào trong cùng một request hoặc trong các request tiếp theo cho đến khi nó được đọc hoặc loại bỏ.
+Ngược lại, ViewBag chỉ có thể được sử dụng trong view mà controller hiện tại đã set ViewBag đó. Một khi dữ liệu được gán cho ViewBag trong controller, nó chỉ có thể được truy cập trong view tương ứng và không thể được truy cập từ các view khác hoặc trong các request tiếp theo.
+Do đó, TempData rất hữu ích khi bạn muốn truyền dữ liệu giữa các action hoặc request, trong khi ViewBag hữu ích trong việc truyền dữ liệu giữa controller và view trong cùng một request.
+
+Mỗi khi tạo lại cái gì thay đổi db thì phải sửa entity tương ứng

@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @{ 
+            var user = (ADOLearn.Models.Employee) HttpContext.Current.Session["user"];
+        }
+        <h1 style="color:red;">Xin chào @user.EmployeeName</h1>
+        <h1>Đây là trang chủ</h1>
+        <ul>
+            <li><a href="~/Admin/Employee/List">Danh sách employee</a></li>
+        </ul>
+        <a href="~/Admin/Admin/Logout"><b>Đăng xuất</b></a>
+    </div>
+</body>
+</html>
